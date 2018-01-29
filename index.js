@@ -31,9 +31,16 @@ const STOP_MESSAGE = 'Goodbye!';
 const data = [
     'news',
     'comedy',
-    '',
-    '',
-    '',
+    'history',
+    'science',
+    'comedy',
+    'entertainment',
+    'documentaries',
+    'news',
+    'sport',
+    'factual',
+    'performance',
+    'music'
     ];
 
 //=========================================================================================================================================
@@ -53,9 +60,9 @@ const handlers = {
     },
     'GetNewFactIntent': function () {
         const factArr = data;
-        const factIndex = Math.floor(Math.random() * factArr.length);
-        const randomFact = factArr[factIndex];
-        const speechOutput = GET_FACT_MESSAGE + randomFact;
+        //const factIndex = Math.floor(Math.random() * factArr.length);
+        const randomFact = factArr;
+        const speechOutput = GET_FACT_MESSAGE; //+ randomFact;
 
         this.response.cardRenderer(SKILL_NAME, randomFact);
         this.response.speak(speechOutput);
